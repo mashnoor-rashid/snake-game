@@ -48,8 +48,8 @@ function drawSnake(x,y, head) {
   ctx.strokeRect(x*snakeW, y*snakeH,snakeW, snakeH);
 }
 
-// Create snake object. By default start snake with length 4
-var snake_length = 4;
+// Create snake object. By default start snake with length 5
+var snake_length = 5;
 var snake = [];
 
 for (var i = snake_length-1; i >= 0; i--) {
@@ -130,23 +130,18 @@ function playGame() {
       x: Math.round(Math.random()*(cvsW/snakeW-1)),
       y: Math.round(Math.random()*(cvsH/snakeH-1))
     }
-    // Create new snake head
-    var newHead = {
-      x: snakeHeadX,
-      y: snakeHeadY
-    };
   }
   else {
     // Only pop off tail if food was not eaten
     snake.pop();
-    var newHead = {
-      x: snakeHeadX,
-      y: snakeHeadY
-    };
   }
-
-  // Update head of snake
+  // Update new head of snake
+  var newHead = {
+    x: snakeHeadX,
+    y: snakeHeadY
+  };
   snake.unshift(newHead);
+
   // Update score
   drawScore(score);
 }
