@@ -108,7 +108,7 @@ function playGame() {
   // If snake hits wall or self, game over
   if (snakeHeadX < 0 || snakeHeadY < 0 || snakeHeadX >= cvsW/snakeW ||
     snakeHeadY >= cvsH/snakeH || checkCollosion(snakeHeadX, snakeHeadY, snake)){
-      alert("Game Vver! Your score: " + score );
+      alert("Game Over! Your score: " + score );
       location.reload();
   }
   // Create new head depending on prev head and direction
